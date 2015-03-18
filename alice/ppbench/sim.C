@@ -16,8 +16,8 @@ void sim(Int_t nev=1) {
   simulator.SetMakeDigitsFromHits("ITS TPC");
   simulator.SetWriteRawData("ALL","raw.root",kTRUE);
 
-  //simulator.SetDefaultStorage("local:///cvmfs/alice-ocdb.cern.ch/calibration/MC/Ideal");
-  simulator.SetDefaultStorage(Form("local://%s/OCDB", gSystem->pwd()));
+  simulator.SetDefaultStorage("local:///cvmfs/alice-ocdb.cern.ch/calibration/MC/Ideal");
+  //simulator.SetDefaultStorage(Form("local://%s/OCDB", gSystem->pwd()));
   simulator.SetSpecificStorage("GRP/GRP/Data",
 			       Form("local://%s",gSystem->pwd()));
   

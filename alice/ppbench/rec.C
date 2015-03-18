@@ -4,7 +4,8 @@ void rec() {
   reco.SetWriteESDfriend();
   reco.SetWriteAlignmentData();
 
-  reco.SetDefaultStorage(Form("local://%s/OCDB", gSystem->pwd()));
+  //reco.SetDefaultStorage(Form("local://%s/OCDB", gSystem->pwd()));
+  reco.SetDefaultStorage("local:///cvmfs/alice-ocdb.cern.ch/calibration/MC/Ideal");
   reco.SetSpecificStorage("GRP/GRP/Data",
 			  Form("local://%s",gSystem->pwd()));
   reco.SetRunPlaneEff(kTRUE);

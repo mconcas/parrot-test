@@ -21,8 +21,8 @@ if [ ! -f "${TEST}/run.sh" ]; then
   echo "No test case ${TEST}"
   exit 1
 fi
-[ -f "${TEST}/setup.sh" ] && source "${TEST}/setup.sh"
 
 mkdir -p "${WORKSPACE}"
 cd "${WORKSPACE}"
+[ -f "${TOPDIR}/${TEST}/setup.sh" ] && source "${TOPDIR}/${TEST}/setup.sh"
 exec ${PARROT_RUN} ${PARROT_OPTIONS} bash -c "${TOPDIR}/${TEST}/run.sh $*"
