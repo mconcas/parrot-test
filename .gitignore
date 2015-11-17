@@ -1,0 +1,6 @@
+._*
+.DS_Store
+*.log
+*.out
+*.error
+*.root*

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-PARROT_RUN=${PARROT_RUN:=${HOME}/parrot_run}
+# PARROT_RUN=${PARROT_RUN:=${HOME}/parrot_run}
+export HOME="$(pwd)"
 export TOPDIR="$(pwd)"
 export WORKSPACE="${TOPDIR}/workspace"
 export PARROT_ALLOW_SWITCHING_CVMFS_REPOSITORIES=yes
@@ -25,4 +26,4 @@ fi
 mkdir -p "${WORKSPACE}"
 cd "${WORKSPACE}"
 [ -f "${TOPDIR}/${TEST}/setup.sh" ] && source "${TOPDIR}/${TEST}/setup.sh"
-exec ${PARROT_RUN} ${PARROT_OPTIONS} bash -c "${TOPDIR}/${TEST}/run.sh $*"
+exec  /opt/cctools/bin/parrot_run ${PARROT_OPTIONS} bash -c "${TOPDIR}/${TEST}/run.sh $*"
