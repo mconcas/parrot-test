@@ -24,6 +24,8 @@ if [ ! -f "${TEST}/run.sh" ]; then
 fi
 
 mkdir -p "${WORKSPACE}"
+echo "path: $PATH"
+env
 cd "${WORKSPACE}"
 [ -f "${TOPDIR}/${TEST}/setup.sh" ] && source "${TOPDIR}/${TEST}/setup.sh"
-exec  /opt/cctools/bin/parrot_run ${PARROT_OPTIONS} bash -c "${TOPDIR}/${TEST}/run.sh $*"
+exec  /opt/cctools/cctools-5.2.3-x86_64-redhat6/bin/parrot_run ${PARROT_OPTIONS} bash -c "${TOPDIR}/${TEST}/run.sh $*"
